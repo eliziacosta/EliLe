@@ -5,11 +5,10 @@ import {
   Library,
   BookMarked,
   CheckCircle,
-  Star,
   ArrowRight,
 } from "lucide-react";
+
 import "./style.css";
-import RatingStars from "../../components/RatingStars";
 import elile from "../../assets/elile.png";
 import { useLivros } from "../../context/LivrosContext";
 
@@ -35,20 +34,19 @@ function Home() {
   return (
     <main className="home-page">
 
-      {/* =========================
+      {/* =====================================================
           NAVBAR
-      ========================= */}
+      ===================================================== */}
 
       <header className="navbar">
 
         <Link to="/" className="logo">
-        <img
-          src={elile}
-          alt="EliLê"
-          className="logo-image"
-        />
-
-      </Link>
+          <img
+            src={elile}
+            alt="EliLê"
+            className="logo-image"
+          />
+        </Link>
 
         <nav>
 
@@ -69,12 +67,12 @@ function Home() {
 
         </nav>
 
-
       </header>
 
-      {/* =========================
+
+      {/* =====================================================
           HERO
-      ========================= */}
+      ===================================================== */}
 
       <section className="hero">
 
@@ -116,9 +114,10 @@ function Home() {
 
         </div>
 
-        {/* =========================
+
+        {/* =====================================================
             DECORAÇÃO
-        ========================= */}
+        ===================================================== */}
 
         <div className="hero-decoration">
 
@@ -153,11 +152,16 @@ function Home() {
 
       </section>
 
-      {/* =========================
-          ESTATÍSTICAS
-      ========================= */}
+
+      {/* =====================================================
+          BIBLIOTECA
+      ===================================================== */}
 
       <section className="library-section">
+
+        {/* ===================================================
+            CABEÇALHO
+        =================================================== */}
 
         <div className="section-header">
 
@@ -177,11 +181,16 @@ function Home() {
             to="/biblioteca"
             className="view-library"
           >
-            Ver biblioteca
+            <span>Ver biblioteca</span>
             <ArrowRight size={17} />
           </Link>
 
         </div>
+
+
+        {/* ===================================================
+            ESTATÍSTICAS
+        =================================================== */}
 
         <div className="stats">
 
@@ -203,6 +212,7 @@ function Home() {
 
           </div>
 
+
           {/* QUERO LER */}
 
           <div className="stat-card">
@@ -221,6 +231,7 @@ function Home() {
 
           </div>
 
+
           {/* LENDO */}
 
           <div className="stat-card">
@@ -238,6 +249,7 @@ function Home() {
             </strong>
 
           </div>
+
 
           {/* LIDOS */}
 
@@ -259,9 +271,10 @@ function Home() {
 
         </div>
 
-        {/* =========================
+
+        {/* ===================================================
             LIVROS RECENTES
-        ========================= */}
+        =================================================== */}
 
         {livrosRecentes.length > 0 ? (
 
@@ -281,9 +294,12 @@ function Home() {
 
               </div>
 
-             
-
             </div>
+
+
+            {/* =================================================
+                GRID DOS LIVROS
+            ================================================= */}
 
             <div className="books-grid home-books">
 
@@ -295,14 +311,16 @@ function Home() {
                 return (
 
                   <Link
+                    key={livro.id}
                     to={`/livro/${livro.id}`}
                     className="book-card-link"
-                    key={livro.id}
                   >
 
                     <article className="book-card">
 
-                      {/* CAPA */}
+                      {/* =======================================
+                          CAPA
+                      ======================================= */}
 
                       <div className="book-cover">
 
@@ -317,19 +335,22 @@ function Home() {
 
                           <div className="no-cover">
 
-                            <BookOpen
-                              size={35}
-                            />
+                            <BookOpen size={35} />
+
+                            <span>
+                              Sem capa
+                            </span>
 
                           </div>
 
                         )}
 
-                       
-
                       </div>
 
-                      {/* INFORMAÇÕES */}
+
+                      {/* =======================================
+                          INFORMAÇÕES
+                      ======================================= */}
 
                       <div className="book-card-content">
 
@@ -341,24 +362,79 @@ function Home() {
                           {livro.autor}
                         </p>
 
-                        {/* =========================
-                            ESTRELAS
-                        ========================= */}
+
+                        {/* =====================================
+                            AVALIAÇÃO
+                        ===================================== */}
 
                         <div className="home-rating">
+
                           <div className="home-stars">
-                            <span className={avaliacao >= 1 ? "filled" : ""}>★</span>
-                            <span className={avaliacao >= 2 ? "filled" : ""}>★</span>
-                            <span className={avaliacao >= 3 ? "filled" : ""}>★</span>
-                            <span className={avaliacao >= 4 ? "filled" : ""}>★</span>
-                            <span className={avaliacao >= 5 ? "filled" : ""}>★</span>
+
+                            <span
+                              className={
+                                avaliacao >= 1
+                                  ? "filled"
+                                  : ""
+                              }
+                            >
+                              ★
+                            </span>
+
+                            <span
+                              className={
+                                avaliacao >= 2
+                                  ? "filled"
+                                  : ""
+                              }
+                            >
+                              ★
+                            </span>
+
+                            <span
+                              className={
+                                avaliacao >= 3
+                                  ? "filled"
+                                  : ""
+                              }
+                            >
+                              ★
+                            </span>
+
+                            <span
+                              className={
+                                avaliacao >= 4
+                                  ? "filled"
+                                  : ""
+                              }
+                            >
+                              ★
+                            </span>
+
+                            <span
+                              className={
+                                avaliacao >= 5
+                                  ? "filled"
+                                  : ""
+                              }
+                            >
+                              ★
+                            </span>
+
                           </div>
 
                           <span className="rating-number">
-                            {avaliacao > 0 ? `${avaliacao}/5` : "Sem avaliação"}
+                            {avaliacao > 0
+                              ? `${avaliacao}/5`
+                              : "Sem avaliação"}
                           </span>
+
                         </div>
-                        {/* GÊNERO */}
+
+
+                        {/* =====================================
+                            GÊNERO
+                        ===================================== */}
 
                         {livro.genero && (
 
@@ -384,17 +460,15 @@ function Home() {
 
         ) : (
 
-          /* =========================
+          /* ===================================================
              BIBLIOTECA VAZIA
-          ========================= */
+          =================================================== */
 
           <div className="empty-library">
 
             <div className="empty-icon">
 
-              <BookOpen
-                size={32}
-              />
+              <BookOpen size={32} />
 
             </div>
 
