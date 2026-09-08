@@ -1,5 +1,5 @@
 /* =====================================================
-   PÁGINA DO LIVRO
+   PÁGINA
 ===================================================== */
 
 .book-page {
@@ -21,14 +21,16 @@
     #0c0c19;
 }
 
+
 /* =====================================================
    CABEÇALHO
 ===================================================== */
 
 .book-page-header {
+  width: 100%;
   max-width: 1180px;
 
-  margin: 0 auto 25px;
+  margin: 0 auto 22px;
 
   display: flex;
 
@@ -51,14 +53,17 @@
   text-decoration: none;
 
   font-size: 14px;
+
+  transition: color 0.2s ease;
 }
 
 .book-page .back-link:hover {
   color: #ffffff;
 }
 
+
 /* =====================================================
-   BOTÃO PNG
+   BOTÃO EXPORTAR
 ===================================================== */
 
 .export-button {
@@ -90,10 +95,7 @@
 
   cursor: pointer;
 
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .export-button:hover {
@@ -104,6 +106,7 @@
   border-color: #7167d8;
 }
 
+
 /* =====================================================
    FOLHA
 ===================================================== */
@@ -111,13 +114,12 @@
 .notebook-paper {
   position: relative;
 
+  width: 100%;
   max-width: 1180px;
 
   margin: 0 auto;
 
   overflow: hidden;
-
-  min-height: 900px;
 
   background-color: #f8f7ff;
 
@@ -126,7 +128,7 @@
       to bottom,
       transparent 0,
       transparent 31px,
-      rgba(86, 111, 185, 0.18) 32px,
+      rgba(86, 111, 185, 0.16) 32px,
       transparent 33px
     );
 
@@ -137,8 +139,9 @@
     0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+
 /* =====================================================
-   MARGEM VERMELHA
+   MARGEM DO CADERNO
 ===================================================== */
 
 .paper-margin {
@@ -156,22 +159,24 @@
   pointer-events: none;
 }
 
+
 /* =====================================================
-   CONTEÚDO
+   CONTEÚDO DA FOLHA
 ===================================================== */
 
 .paper-content {
   position: relative;
 
   padding:
-    35px
-    60px
+    38px
+    65px
     45px
     105px;
 }
 
+
 /* =====================================================
-   MARCA
+   LOGO
 ===================================================== */
 
 .paper-brand {
@@ -181,64 +186,74 @@
 
   justify-content: space-between;
 
-  margin-bottom: 38px;
+  margin-bottom: 45px;
 }
 
 .paper-logo {
-  display: flex;
+  display: inline-flex;
 
   align-items: center;
 
-  gap: 8px;
+  text-decoration: none;
+}
 
-  color: #5144a1;
+.paper-logo-image {
+  width: 105px;
 
-  font-size: 19px;
+  height: auto;
 
-  font-weight: 700;
+  display: block;
 }
 
 .paper-title {
-  color: #77758d;
+  color: #8b889d;
 
   font-size: 10px;
 
-  font-weight: 700;
+  font-weight: 800;
 
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
 }
 
+
 /* =====================================================
-   CAPA + INFO
+   CAPA + INFORMAÇÕES
 ===================================================== */
 
 .notebook-book-layout {
   display: grid;
 
   grid-template-columns:
-    285px
+    270px
     minmax(0, 1fr);
 
-  gap: 60px;
+  gap: 65px;
 
-  align-items: start;
+  align-items: center;
 }
 
+
 /* =====================================================
-   CAPA
+   ÁREA DA CAPA
 ===================================================== */
 
 .notebook-cover-area {
   display: flex;
 
-  flex-direction: column;
-
   align-items: center;
+
+  justify-content: center;
 }
 
+
+/* =====================================================
+   CAPA
+===================================================== */
+
 .notebook-cover {
-  width: 285px;
-  height: 410px;
+  width: 270px;
+
+  height: 390px;
 
   overflow: hidden;
 
@@ -247,15 +262,24 @@
   background: #e4e2ed;
 
   box-shadow:
-    8px 12px 25px rgba(36, 30, 70, 0.22);
+    8px 14px 28px
+    rgba(36, 30, 70, 0.24);
 
   transform: rotate(-1deg);
 
-  transition: transform 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .notebook-cover:hover {
-  transform: rotate(0deg) translateY(-3px);
+  transform:
+    rotate(0deg)
+    translateY(-4px);
+
+  box-shadow:
+    10px 18px 35px
+    rgba(36, 30, 70, 0.28);
 }
 
 .notebook-cover img {
@@ -267,17 +291,6 @@
   object-fit: cover;
 }
 
-.cover-caption {
-  margin-top: 18px;
-
-  color: #77758d;
-
-  font-family: "Playfair Display", serif;
-
-  font-size: 14px;
-
-  transform: rotate(-2deg);
-}
 
 /* =====================================================
    SEM CAPA
@@ -300,15 +313,20 @@
   color: #77758d;
 }
 
+
 /* =====================================================
-   INFORMAÇÕES
+   INFORMAÇÕES PRINCIPAIS
 ===================================================== */
 
 .notebook-info {
-  padding-top: 5px;
+  min-width: 0;
+
+  padding: 5px 0;
 }
 
 .book-status-large {
+  display: inline-block;
+
   color: #6556b8;
 
   font-size: 10px;
@@ -318,38 +336,73 @@
   letter-spacing: 2px;
 }
 
-.notebook-info h1 {
-  max-width: 650px;
 
-  margin-top: 10px;
+/* =====================================================
+   TÍTULO
+===================================================== */
+
+.notebook-info h1 {
+  max-width: 700px;
+
+  margin:
+    12px
+    0
+    0;
 
   color: #29263d;
 
-  font-family: "Playfair Display", serif;
+  font-family:
+    "Playfair Display",
+    serif;
 
-  font-size: clamp(42px, 5vw, 62px);
+  font-size:
+    clamp(
+      38px,
+      4.5vw,
+      58px
+    );
+
+  font-weight: 700;
 
   line-height: 1.05;
+
+  letter-spacing: -0.5px;
+
+  overflow-wrap: anywhere;
 }
 
+
+/* =====================================================
+   AUTOR
+===================================================== */
+
 .details-author {
-  margin-top: 10px;
+  margin-top: 13px;
 
   color: #747188;
 
   font-size: 16px;
+
+  line-height: 1.5;
 }
 
 .details-author strong {
   color: #514b73;
 }
 
+
 /* =====================================================
    AVALIAÇÃO
 ===================================================== */
 
 .notebook-rating {
-  margin-top: 27px;
+  margin-top: 28px;
+
+  padding-top: 20px;
+
+  border-top:
+    1px solid
+    rgba(92, 86, 135, 0.16);
 }
 
 .rating-label {
@@ -435,6 +488,7 @@
   font-weight: 700;
 }
 
+
 /* =====================================================
    INFORMAÇÕES DO LIVRO
 ===================================================== */
@@ -445,30 +499,30 @@
   grid-template-columns:
     repeat(3, minmax(0, 1fr));
 
-  gap: 12px;
+  gap: 10px;
 
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 .information-item {
-  min-height: 74px;
+  min-height: 70px;
 
-  padding: 13px;
+  padding: 12px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 11px;
+  gap: 10px;
 
   border:
     1px solid
-    rgba(92, 86, 135, 0.2);
+    rgba(92, 86, 135, 0.18);
 
-  border-radius: 8px;
+  border-radius: 9px;
 
   background:
-    rgba(255, 255, 255, 0.45);
+    rgba(255, 255, 255, 0.48);
 }
 
 .information-item svg {
@@ -478,6 +532,8 @@
 }
 
 .information-item div {
+  min-width: 0;
+
   display: flex;
 
   flex-direction: column;
@@ -489,22 +545,33 @@
   color: #858196;
 
   font-size: 9px;
+
+  font-weight: 500;
 }
 
 .information-item strong {
   color: #39344f;
 
   font-size: 12px;
+
+  font-weight: 700;
+
+  overflow-wrap: anywhere;
 }
 
+
 /* =====================================================
-   SEÇÕES
+   SEÇÃO SOBRE O LIVRO
 ===================================================== */
 
 .notebook-section {
-  margin-top: 42px;
+  margin-top: 55px;
 
-  padding-top: 12px;
+  padding-top: 25px;
+
+  border-top:
+    1px solid
+    rgba(92, 86, 135, 0.16);
 }
 
 .notebook-section-title {
@@ -516,43 +583,61 @@
 }
 
 .notebook-section-title svg {
+  flex-shrink: 0;
+
   color: #6556b8;
 }
 
 .notebook-section-title h2 {
+  margin: 0;
+
   color: #3c3655;
 
-  font-family: "Playfair Display", serif;
+  font-family:
+    "Playfair Display",
+    serif;
 
   font-size: 25px;
+
+  font-weight: 700;
 }
 
 .notebook-description {
   max-width: 950px;
 
-  margin-top: 10px;
+  margin:
+    13px
+    0
+    0;
 
   color: #55526b;
 
   font-size: 14px;
 
-  line-height: 2;
+  line-height: 1.9;
 }
+
 
 /* =====================================================
    RODAPÉ
 ===================================================== */
 
 .paper-footer {
-  margin-top: 55px;
+  margin-top: 60px;
 
-  padding-top: 20px;
+  padding-top: 18px;
 
   display: flex;
+
+  align-items: center;
 
   justify-content: space-between;
 
   gap: 20px;
+
+  border-top:
+    1px dashed
+    rgba(92, 86, 135, 0.25);
 
   color: #8a879d;
 
@@ -561,14 +646,19 @@
   font-style: italic;
 }
 
+
 /* =====================================================
    AÇÕES
 ===================================================== */
 
 .book-page .details-actions {
+  width: 100%;
   max-width: 1180px;
 
-  margin: 25px auto 0;
+  margin:
+    25px
+    auto
+    0;
 
   display: flex;
 
@@ -588,6 +678,8 @@
 
   align-items: center;
 
+  justify-content: center;
+
   gap: 8px;
 
   border-radius: 9px;
@@ -600,8 +692,13 @@
 
   cursor: pointer;
 
-  transition: 0.2s;
+  transition: 0.2s ease;
 }
+
+
+/* =====================================================
+   MARCAR COMO LIDO
+===================================================== */
 
 .book-page .primary-button {
   border: 1px solid #7165d5;
@@ -628,6 +725,11 @@
     rgba(92, 82, 190, 0.35);
 }
 
+
+/* =====================================================
+   EDITAR
+===================================================== */
+
 .book-page .edit-button {
   border: 1px solid #403d61;
 
@@ -638,7 +740,14 @@
 
 .book-page .edit-button:hover {
   background: #242141;
+
+  transform: translateY(-2px);
 }
+
+
+/* =====================================================
+   EXCLUIR
+===================================================== */
 
 .book-page .delete-button {
   border: 1px solid #653d51;
@@ -650,38 +759,76 @@
 
 .book-page .delete-button:hover {
   background: #351d2c;
+
+  transform: translateY(-2px);
 }
 
+
 /* =====================================================
-   RESPONSIVO
+   LIVRO NÃO ENCONTRADO
 ===================================================== */
 
-@media (max-width: 900px) {
-  .book-page {
+.not-found {
+  min-height: 100vh;
+
+  padding: 60px 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  background: #0c0c19;
+
+  color: white;
+}
+
+.not-found h1 {
+  margin-top: 20px;
+}
+
+.not-found p {
+  color: #aaa8c0;
+
+  margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .paper-content {
     padding:
-      25px
-      20px
-      60px;
+      35px
+      45px
+      45px
+      90px;
   }
 
   .notebook-book-layout {
-    grid-template-columns: 220px 1fr;
+    grid-template-columns:
+      230px
+      minmax(0, 1fr);
 
-    gap: 35px;
+    gap: 45px;
   }
 
   .notebook-cover {
-    width: 220px;
-    height: 330px;
+    width: 230px;
+
+    height: 335px;
   }
 
-  .paper-content {
-    padding-left: 85px;
-    padding-right: 35px;
-  }
-
-  .paper-margin {
-    left: 58px;
+  .notebook-info h1 {
+    font-size: 44px;
   }
 
   .book-information {
@@ -689,11 +836,30 @@
   }
 }
 
-@media (max-width: 700px) {
-  .book-page-header {
-    align-items: flex-start;
 
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .book-page {
+    padding:
+      20px
+      15px
+      55px;
+  }
+
+  .book-page-header {
     flex-direction: column;
+
+    align-items: stretch;
+
+    margin-bottom: 18px;
+  }
+
+  .book-page .back-link {
+    width: fit-content;
   }
 
   .export-button {
@@ -701,7 +867,11 @@
   }
 
   .notebook-paper {
-    border-radius: 4px;
+    border-radius: 5px;
+  }
+
+  .paper-margin {
+    left: 27px;
   }
 
   .paper-content {
@@ -712,27 +882,153 @@
       48px;
   }
 
-  .paper-margin {
-    left: 27px;
+  .paper-brand {
+    margin-bottom: 35px;
+  }
+
+  .paper-logo-image {
+    width: 85px;
+  }
+
+  .paper-title {
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
   }
 
   .notebook-book-layout {
     grid-template-columns: 1fr;
 
-    gap: 30px;
+    gap: 35px;
+
+    align-items: start;
   }
 
   .notebook-cover-area {
-    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   .notebook-cover {
-    width: 210px;
-    height: 310px;
+    width: 200px;
+
+    height: 295px;
   }
 
   .notebook-info h1 {
-    font-size: 40px;
+    font-size: 38px;
+
+    line-height: 1.08;
+  }
+
+  .details-author {
+    font-size: 15px;
+  }
+
+  .notebook-rating {
+    margin-top: 23px;
+
+    padding-top: 18px;
+  }
+
+  .book-information {
+    grid-template-columns: 1fr;
+
+    margin-top: 25px;
+  }
+
+  .information-item {
+    min-height: 64px;
+  }
+
+  .notebook-section {
+    margin-top: 42px;
+
+    padding-top: 22px;
+  }
+
+  .notebook-section-title h2 {
+    font-size: 22px;
+  }
+
+  .notebook-description {
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+  .paper-footer {
+    margin-top: 45px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .book-page .details-actions {
+    flex-direction: column;
+  }
+
+  .book-page .primary-button,
+  .book-page .edit-button,
+  .book-page .delete-button {
+    width: 100%;
+  }
+}
+
+
+/* =====================================================
+   CELULARES PEQUENOS
+===================================================== */
+
+@media (max-width: 450px) {
+
+  .book-page {
+    padding:
+      15px
+      10px
+      45px;
+  }
+
+  .paper-content {
+    padding:
+      25px
+      15px
+      35px
+      42px;
+  }
+
+  .paper-margin {
+    left: 24px;
+  }
+
+  .paper-brand {
+    align-items: flex-start;
+  }
+
+  .paper-title {
+    max-width: 100px;
+
+    text-align: right;
+
+    line-height: 1.4;
+  }
+
+  .notebook-cover {
+    width: 175px;
+
+    height: 260px;
+  }
+
+  .notebook-info h1 {
+    font-size: 32px;
+  }
+
+  .rating-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 4px;
   }
 
   .rating-star-button {
@@ -741,42 +1037,5 @@
 
   .rating-star {
     font-size: 27px;
-  }
-}
-
-@media (max-width: 450px) {
-  .book-page {
-    padding:
-      20px
-      10px
-      50px;
-  }
-
-  .paper-content {
-    padding-left: 42px;
-    padding-right: 15px;
-  }
-
-  .paper-margin {
-    left: 24px;
-  }
-
-  .notebook-cover {
-    width: 180px;
-    height: 270px;
-  }
-
-  .notebook-info h1 {
-    font-size: 34px;
-  }
-
-  .rating-row {
-    align-items: flex-start;
-
-    flex-direction: column;
-  }
-
-  .paper-footer {
-    flex-direction: column;
   }
 }

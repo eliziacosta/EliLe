@@ -13,8 +13,8 @@ import {
   CheckCircle,
   Edit3,
   Download,
-  Users,
 } from "lucide-react";
+
 import "./style.css";
 import html2canvas from "html2canvas";
 import { useLivros } from "../../context/LivrosContext";
@@ -67,7 +67,7 @@ function Livro() {
   }
 
   // =========================
-  // STATUS
+  // MARCAR COMO LIDO
   // =========================
 
   function marcarComoLido() {
@@ -238,20 +238,11 @@ function Livro() {
     }
   }
 
-  // =========================
-  // PERSONAGENS
-  // =========================
-
-  const personagens =
-    livro.personagensFavoritos ||
-    livro.personagens ||
-    "";
-
   return (
     <main className="book-page">
 
       {/* =========================
-          TOPO
+          CABEÇALHO
       ========================= */}
 
       <div className="book-page-header">
@@ -276,7 +267,7 @@ function Livro() {
       </div>
 
       {/* =========================
-          FOLHA DO CADERNO
+          FOLHA
       ========================= */}
 
       <section
@@ -284,23 +275,35 @@ function Livro() {
         className="notebook-paper"
       >
 
-        {/* margem vermelha */}
         <div className="paper-margin" />
 
-        {/* conteúdo */}
         <div className="paper-content">
 
-             <Link to="/" className="logo">
-                    <img
-                      src={elile}
-                      alt="EliLê"
-                      className="logo-image"
-                    />
-            
-                  </Link>
+          {/* =========================
+              LOGO
+          ========================= */}
+
+          <div className="paper-brand">
+
+            <Link
+              to="/"
+              className="paper-logo"
+            >
+              <img
+                src={elile}
+                alt="EliLê"
+                className="paper-logo-image"
+              />
+            </Link>
+
+            <span className="paper-title">
+              FICHA DE LEITURA
+            </span>
+
+          </div>
 
           {/* =========================
-              CONTEÚDO PRINCIPAL
+              CAPA + INFORMAÇÕES
           ========================= */}
 
           <div className="notebook-book-layout">
@@ -343,7 +346,7 @@ function Livro() {
                 por <strong>{livro.autor}</strong>
               </p>
 
-              {/* ESTRELAS */}
+              {/* AVALIAÇÃO */}
 
               <div className="notebook-rating">
 
@@ -378,6 +381,7 @@ function Livro() {
 
                     <div>
                       <span>Gênero</span>
+
                       <strong>
                         {livro.genero}
                       </strong>
@@ -393,6 +397,7 @@ function Livro() {
 
                     <div>
                       <span>Páginas</span>
+
                       <strong>
                         {livro.paginas}
                       </strong>
@@ -422,72 +427,44 @@ function Livro() {
           </div>
 
           {/* =========================
-              DESCRIÇÃO
+              SOBRE O LIVRO
           ========================= */}
 
           <div className="notebook-section">
 
             <div className="notebook-section-title">
+
               <FileText size={19} />
-              <h2>Sobre o livro</h2>
+
+              <h2>
+                Sobre o livro
+              </h2>
+
             </div>
 
             <p className="notebook-description">
+
               {livro.descricao ||
                 "Nenhuma descrição foi adicionada para este livro."}
-            </p>
-
-          </div>
-
-          {/* =========================
-              PERSONAGENS
-          ========================= */}
-
-          <div className="notebook-section">
-
-            <div className="notebook-section-title">
-              <Users size={19} />
-              <h2>Personagens favoritos</h2>
-            </div>
-
-            <p className="notebook-description">
-
-              {personagens
-                ? personagens
-                : "Você ainda não adicionou seus personagens favoritos."}
 
             </p>
 
           </div>
 
           {/* =========================
-              MINHA OPINIÃO
+              RODAPÉ
           ========================= */}
-
-          <div className="notebook-section">
-
-            <div className="notebook-section-title">
-              <BookOpen size={19} />
-              <h2>Minha opinião</h2>
-            </div>
-
-            <p className="notebook-description">
-              {livro.opiniao ||
-                "Escreva aqui o que você achou dessa leitura..."}
-            </p>
-
-          </div>
-
-          {/* ASSINATURA */}
 
           <div className="paper-footer">
+
             <span>
-              Minha biblioteca no eLivro
+              Minha biblioteca no EliLê
             </span>
 
             <span>
               {formatarData()}
             </span>
+
           </div>
 
         </div>
@@ -509,7 +486,6 @@ function Livro() {
             Marcar como lido
           </button>
         )}
-
 
         <button
           className="edit-button"
