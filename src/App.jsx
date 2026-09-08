@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Biblioteca from "./pages/Biblioteca";
 import AdicionarLivro from "./pages/AdicionarLivro";
-import Livro from "./pages/Livro";
+import Livro from "./pages/Livro"; 
 
 function App() {
   return (

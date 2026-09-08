@@ -1,0 +1,714 @@
+/* =========================================================
+   BIBLIOTECA
+========================================================= */
+
+.biblioteca-page {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(91, 141, 239, 0.07),
+      transparent 25%
+    ),
+    var(--background);
+}
+
+.biblioteca-container {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 55px 30px 100px;
+}
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.biblioteca-heading {
+  display: flex;
+
+  align-items: end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.biblioteca-heading h1 {
+  margin-top: 8px;
+
+  color: var(--text);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(42px, 5vw, 58px);
+
+  line-height: 1;
+}
+
+.biblioteca-heading p {
+  margin-top: 14px;
+
+  color: var(--muted);
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   ESTATÍSTICAS
+========================================================= */
+
+.library-stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+
+  margin-top: 40px;
+}
+
+.library-stat {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 19px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 13px;
+
+  background: var(--surface);
+
+  transition: 0.2s;
+}
+
+.library-stat:hover {
+  transform: translateY(-2px);
+
+  border-color: #454361;
+}
+
+.library-stat-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139, 124, 246, 0.16),
+      rgba(91, 141, 239, 0.12)
+    );
+
+  color: var(--primary);
+}
+
+.library-stat span {
+  display: block;
+
+  color: var(--muted);
+
+  font-size: 11px;
+}
+
+.library-stat strong {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--primary-light);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 27px;
+}
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.library-toolbar {
+  margin-top: 35px;
+
+  padding: 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  background: var(--surface);
+}
+
+.library-search {
+  width: 330px;
+  height: 43px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 13px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
+
+  background: var(--background-soft);
+
+  color: var(--muted);
+}
+
+.library-search:focus-within {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 3px rgba(139, 124, 246, 0.08);
+}
+
+.library-search input {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: var(--text);
+
+  font-size: 13px;
+}
+
+.library-search input::placeholder {
+  color: #77748a;
+}
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+.library-filters {
+  display: flex;
+
+  gap: 5px;
+}
+
+.filter-button {
+  padding: 9px 14px;
+
+  border: 0;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.filter-button:hover {
+  background: var(--surface-light);
+
+  color: var(--primary-light);
+}
+
+.filter-button.active {
+  background: var(--gradient);
+
+  color: white;
+
+  box-shadow:
+    0 5px 15px rgba(91, 141, 239, 0.15);
+}
+
+/* =========================================================
+   RESULTADO
+========================================================= */
+
+.books-result-header {
+  margin: 30px 0 17px;
+
+  color: var(--muted);
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   GRID DE LIVROS
+========================================================= */
+
+.library-books-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 28px 20px;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.library-book-card {
+  min-width: 0;
+
+  color: inherit;
+
+  text-decoration: none;
+}
+
+.library-book-cover {
+  position: relative;
+
+  height: 330px;
+
+  overflow: hidden;
+
+  border-radius: 9px;
+
+  background: var(--surface);
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.library-book-card:hover .library-book-cover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 18px 35px rgba(0, 0, 0, 0.35);
+}
+
+.library-book-cover img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+/* =========================================================
+   SEM CAPA
+========================================================= */
+
+.library-no-cover {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  color: var(--primary-light);
+
+  background:
+    linear-gradient(
+      145deg,
+      #252440,
+      #1b1b30
+    );
+}
+
+.library-no-cover span {
+  font-family: "Playfair Display", serif;
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status-badge {
+  position: absolute;
+
+  left: 12px;
+  bottom: 12px;
+
+  padding: 7px 10px;
+
+  border-radius: 20px;
+
+  background: rgba(17, 17, 31, 0.9);
+
+  color: var(--primary-light);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  border: 1px solid rgba(139, 124, 246, 0.25);
+}
+
+/* =========================================================
+   DELETE
+========================================================= */
+
+.card-delete {
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: rgba(17, 17, 31, 0.9);
+
+  color: var(--danger);
+
+  opacity: 0;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.library-book-card:hover .card-delete {
+  opacity: 1;
+}
+
+.card-delete:hover {
+  background: #24233a;
+
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   INFORMAÇÕES
+========================================================= */
+
+.library-book-info {
+  padding-top: 14px;
+}
+
+.library-book-info h3 {
+  overflow: hidden;
+
+  color: var(--text);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 19px;
+
+  font-weight: 600;
+
+  line-height: 1.25;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.library-book-info p {
+  margin-top: 5px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   GÊNERO
+========================================================= */
+
+.genre-tag {
+  display: inline-block;
+
+  margin-top: 10px;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  background: rgba(139, 124, 246, 0.1);
+
+  color: var(--primary-light);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  border: 1px solid rgba(139, 124, 246, 0.15);
+}
+
+/* =========================================================
+   ESTRELAS DA BIBLIOTECA
+========================================================= */
+
+.library-rating {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 8px;
+
+  min-height: 22px;
+}
+
+.library-stars {
+  display: flex;
+
+  align-items: center;
+
+  gap: 2px;
+}
+
+.library-star {
+  display: inline-block;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 17px;
+
+  line-height: 1;
+
+  color: #55536b;
+}
+
+.library-star.filled {
+  color: #f5c451;
+}
+
+.library-rating-number {
+  color: var(--muted);
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   BIBLIOTECA VAZIA
+========================================================= */
+
+.library-empty {
+  min-height: 410px;
+
+  margin-top: 30px;
+
+  padding: 50px 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px dashed #393750;
+
+  border-radius: 17px;
+
+  background: rgba(28, 28, 50, 0.5);
+
+  text-align: center;
+}
+
+.empty-book-icon {
+  width: 75px;
+  height: 75px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139, 124, 246, 0.15),
+      rgba(91, 141, 239, 0.1)
+    );
+
+  color: var(--primary);
+}
+
+.library-empty h2,
+.no-results h2 {
+  margin-top: 8px;
+
+  color: var(--text);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 28px;
+}
+
+.library-empty p,
+.no-results p {
+  margin: 8px 0 22px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   SEM RESULTADOS
+========================================================= */
+
+.no-results {
+  min-height: 300px;
+
+  margin-top: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid var(--border);
+
+  border-radius: 15px;
+
+  background: var(--surface);
+
+  color: var(--muted);
+
+  text-align: center;
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 950px) {
+  .library-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .library-books-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .biblioteca-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .library-toolbar {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .library-search {
+    width: 100%;
+  }
+
+  .library-filters {
+    overflow-x: auto;
+  }
+
+  .filter-button {
+    white-space: nowrap;
+  }
+
+  .library-books-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px 14px;
+  }
+
+  .library-book-cover {
+    height: 280px;
+  }
+}
+
+@media (max-width: 500px) {
+  .library-stats {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 9px;
+  }
+
+  .library-stat {
+    padding: 13px;
+  }
+
+  .library-stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .library-stat strong {
+    font-size: 23px;
+  }
+
+  .library-books-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .library-book-cover {
+    height: 230px;
+  }
+
+  .library-book-info h3 {
+    font-size: 16px;
+  }
+}

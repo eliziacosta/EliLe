@@ -1,0 +1,782 @@
+/* =====================================================
+   PÁGINA DO LIVRO
+===================================================== */
+
+.book-page {
+  min-height: 100vh;
+
+  padding: 35px 6% 80px;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(102, 76, 190, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(47, 94, 170, 0.18),
+      transparent 35%
+    ),
+    #0c0c19;
+}
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.book-page-header {
+  max-width: 1180px;
+
+  margin: 0 auto 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.book-page .back-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #aaa8c0;
+
+  text-decoration: none;
+
+  font-size: 14px;
+}
+
+.book-page .back-link:hover {
+  color: #ffffff;
+}
+
+/* =====================================================
+   BOTÃO PNG
+===================================================== */
+
+.export-button {
+  min-height: 44px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 17px;
+
+  border: 1px solid #45426c;
+
+  border-radius: 10px;
+
+  background: #18172c;
+
+  color: #ddd9ff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.export-button:hover {
+  transform: translateY(-2px);
+
+  background: #242143;
+
+  border-color: #7167d8;
+}
+
+/* =====================================================
+   FOLHA
+===================================================== */
+
+.notebook-paper {
+  position: relative;
+
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  min-height: 900px;
+
+  background-color: #f8f7ff;
+
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 31px,
+      rgba(86, 111, 185, 0.18) 32px,
+      transparent 33px
+    );
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* =====================================================
+   MARGEM VERMELHA
+===================================================== */
+
+.paper-margin {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  left: 72px;
+
+  width: 1px;
+
+  background: rgba(197, 89, 113, 0.45);
+
+  pointer-events: none;
+}
+
+/* =====================================================
+   CONTEÚDO
+===================================================== */
+
+.paper-content {
+  position: relative;
+
+  padding:
+    35px
+    60px
+    45px
+    105px;
+}
+
+/* =====================================================
+   MARCA
+===================================================== */
+
+.paper-brand {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 38px;
+}
+
+.paper-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #5144a1;
+
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+.paper-title {
+  color: #77758d;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+/* =====================================================
+   CAPA + INFO
+===================================================== */
+
+.notebook-book-layout {
+  display: grid;
+
+  grid-template-columns:
+    285px
+    minmax(0, 1fr);
+
+  gap: 60px;
+
+  align-items: start;
+}
+
+/* =====================================================
+   CAPA
+===================================================== */
+
+.notebook-cover-area {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.notebook-cover {
+  width: 285px;
+  height: 410px;
+
+  overflow: hidden;
+
+  border-radius: 5px;
+
+  background: #e4e2ed;
+
+  box-shadow:
+    8px 12px 25px rgba(36, 30, 70, 0.22);
+
+  transform: rotate(-1deg);
+
+  transition: transform 0.25s ease;
+}
+
+.notebook-cover:hover {
+  transform: rotate(0deg) translateY(-3px);
+}
+
+.notebook-cover img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.cover-caption {
+  margin-top: 18px;
+
+  color: #77758d;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 14px;
+
+  transform: rotate(-2deg);
+}
+
+/* =====================================================
+   SEM CAPA
+===================================================== */
+
+.notebook-cover .details-no-cover {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  color: #77758d;
+}
+
+/* =====================================================
+   INFORMAÇÕES
+===================================================== */
+
+.notebook-info {
+  padding-top: 5px;
+}
+
+.book-status-large {
+  color: #6556b8;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.notebook-info h1 {
+  max-width: 650px;
+
+  margin-top: 10px;
+
+  color: #29263d;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(42px, 5vw, 62px);
+
+  line-height: 1.05;
+}
+
+.details-author {
+  margin-top: 10px;
+
+  color: #747188;
+
+  font-size: 16px;
+}
+
+.details-author strong {
+  color: #514b73;
+}
+
+/* =====================================================
+   AVALIAÇÃO
+===================================================== */
+
+.notebook-rating {
+  margin-top: 27px;
+}
+
+.rating-label {
+  display: block;
+
+  color: #77758d;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+.rating-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 7px;
+}
+
+.rating-stars {
+  display: flex;
+
+  align-items: center;
+}
+
+.rating-star-button {
+  width: 34px;
+  height: 38px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.rating-star {
+  position: relative;
+
+  display: inline-block;
+
+  font-size: 30px;
+
+  line-height: 1;
+
+  color: #c9c7d4;
+
+  transition:
+    transform 0.15s ease;
+}
+
+.rating-star::before {
+  content: "★";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: var(--star-fill);
+
+  overflow: hidden;
+
+  color: #f3bd38;
+}
+
+.rating-star-button:hover .rating-star {
+  transform: scale(1.12);
+}
+
+.rating-value {
+  color: #514b73;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+/* =====================================================
+   INFORMAÇÕES DO LIVRO
+===================================================== */
+
+.book-information {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.information-item {
+  min-height: 74px;
+
+  padding: 13px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  border:
+    1px solid
+    rgba(92, 86, 135, 0.2);
+
+  border-radius: 8px;
+
+  background:
+    rgba(255, 255, 255, 0.45);
+}
+
+.information-item svg {
+  flex-shrink: 0;
+
+  color: #6556b8;
+}
+
+.information-item div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.information-item span {
+  color: #858196;
+
+  font-size: 9px;
+}
+
+.information-item strong {
+  color: #39344f;
+
+  font-size: 12px;
+}
+
+/* =====================================================
+   SEÇÕES
+===================================================== */
+
+.notebook-section {
+  margin-top: 42px;
+
+  padding-top: 12px;
+}
+
+.notebook-section-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+.notebook-section-title svg {
+  color: #6556b8;
+}
+
+.notebook-section-title h2 {
+  color: #3c3655;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 25px;
+}
+
+.notebook-description {
+  max-width: 950px;
+
+  margin-top: 10px;
+
+  color: #55526b;
+
+  font-size: 14px;
+
+  line-height: 2;
+}
+
+/* =====================================================
+   RODAPÉ
+===================================================== */
+
+.paper-footer {
+  margin-top: 55px;
+
+  padding-top: 20px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  color: #8a879d;
+
+  font-size: 10px;
+
+  font-style: italic;
+}
+
+/* =====================================================
+   AÇÕES
+===================================================== */
+
+.book-page .details-actions {
+  max-width: 1180px;
+
+  margin: 25px auto 0;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.book-page .primary-button,
+.book-page .edit-button,
+.book-page .delete-button {
+  min-height: 45px;
+
+  padding: 0 17px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border-radius: 9px;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.book-page .primary-button {
+  border: 1px solid #7165d5;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7669df,
+      #4f73d8
+    );
+
+  color: white;
+
+  box-shadow:
+    0 8px 20px
+    rgba(92, 82, 190, 0.25);
+}
+
+.book-page .primary-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px
+    rgba(92, 82, 190, 0.35);
+}
+
+.book-page .edit-button {
+  border: 1px solid #403d61;
+
+  background: #18172a;
+
+  color: #d5d2e7;
+}
+
+.book-page .edit-button:hover {
+  background: #242141;
+}
+
+.book-page .delete-button {
+  border: 1px solid #653d51;
+
+  background: #251621;
+
+  color: #df91a9;
+}
+
+.book-page .delete-button:hover {
+  background: #351d2c;
+}
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 900px) {
+  .book-page {
+    padding:
+      25px
+      20px
+      60px;
+  }
+
+  .notebook-book-layout {
+    grid-template-columns: 220px 1fr;
+
+    gap: 35px;
+  }
+
+  .notebook-cover {
+    width: 220px;
+    height: 330px;
+  }
+
+  .paper-content {
+    padding-left: 85px;
+    padding-right: 35px;
+  }
+
+  .paper-margin {
+    left: 58px;
+  }
+
+  .book-information {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .book-page-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .export-button {
+    width: 100%;
+  }
+
+  .notebook-paper {
+    border-radius: 4px;
+  }
+
+  .paper-content {
+    padding:
+      28px
+      20px
+      40px
+      48px;
+  }
+
+  .paper-margin {
+    left: 27px;
+  }
+
+  .notebook-book-layout {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .notebook-cover-area {
+    align-items: flex-start;
+  }
+
+  .notebook-cover {
+    width: 210px;
+    height: 310px;
+  }
+
+  .notebook-info h1 {
+    font-size: 40px;
+  }
+
+  .rating-star-button {
+    width: 30px;
+  }
+
+  .rating-star {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 450px) {
+  .book-page {
+    padding:
+      20px
+      10px
+      50px;
+  }
+
+  .paper-content {
+    padding-left: 42px;
+    padding-right: 15px;
+  }
+
+  .paper-margin {
+    left: 24px;
+  }
+
+  .notebook-cover {
+    width: 180px;
+    height: 270px;
+  }
+
+  .notebook-info h1 {
+    font-size: 34px;
+  }
+
+  .rating-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .paper-footer {
+    flex-direction: column;
+  }
+}

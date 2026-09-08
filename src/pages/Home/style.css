@@ -1,0 +1,532 @@
+/* =========================================================
+   HOME
+========================================================= */
+
+.hero {
+  position: relative;
+
+  min-height: 560px;
+
+  padding: 80px 9%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 60px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 75% 30%,
+      rgba(91, 141, 239, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 60% 80%,
+      rgba(139, 124, 246, 0.1),
+      transparent 30%
+    ),
+    var(--background);
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 620px;
+}
+
+.hero-label,
+.section-label {
+  color: var(--primary-light);
+
+  font-size: 15px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  margin-top: 17px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(50px, 6vw, 78px);
+
+  line-height: 0.98;
+
+  font-weight: 600;
+
+  color: var(--text);
+}
+
+.hero h1 span {
+  color: var(--primary);
+}
+
+.hero p {
+  max-width: 490px;
+
+  margin-top: 25px;
+
+  color: var(--muted);
+
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   HERO BOTÕES
+========================================================= */
+
+.hero-actions {
+  display: flex;
+
+  gap: 13px;
+
+  margin-top: 32px;
+}
+
+/* =========================================================
+   DECORAÇÃO DOS LIVROS
+========================================================= */
+
+.hero-decoration {
+  position: relative;
+
+  width: 410px;
+  height: 370px;
+}
+
+.book-shape {
+  position: absolute;
+
+  bottom: 25px;
+
+  border-radius: 4px 10px 10px 4px;
+
+  box-shadow:
+    10px 20px 35px rgba(0, 0, 0, 0.3);
+}
+
+.book-one {
+  width: 120px;
+  height: 265px;
+
+  left: 40px;
+  bottom: 28px;
+
+  background: linear-gradient(
+    145deg,
+    #5146b8,
+    #392f8f
+  );
+
+  transform: rotate(-9deg);
+}
+
+.book-two {
+  width: 135px;
+  height: 300px;
+
+  left: 135px;
+
+  background: linear-gradient(
+    145deg,
+    #5b8def,
+    #3e68bd
+  );
+
+  z-index: 2;
+
+  transform: rotate(2deg);
+}
+
+.book-three {
+  width: 115px;
+  height: 245px;
+
+  right: 20px;
+
+  background: linear-gradient(
+    145deg,
+    #8b7cf6,
+    #6255c9
+  );
+
+  transform: rotate(10deg);
+}
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.quote-card {
+  position: absolute;
+
+  z-index: 5;
+
+  width: 235px;
+
+  right: -15px;
+  top: 20px;
+
+  padding: 21px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 13px;
+
+  background: rgba(28, 28, 50, 0.93);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(12px);
+}
+
+.quote-card svg {
+  color: var(--primary);
+}
+
+.quote-card p {
+  margin: 13px 0 10px;
+
+  color: var(--text);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 16px;
+
+  line-height: 1.45;
+}
+
+.quote-card span {
+  color: var(--muted);
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   SEÇÃO DA HOME
+========================================================= */
+
+.library-section {
+  padding: 70px 9% 100px;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--background-soft),
+      var(--background)
+    );
+}
+
+.section-header {
+  display: flex;
+
+  align-items: end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.section-header h2 {
+  margin-top: 8px;
+
+  font-family: "Playfair Display", serif;
+
+  color: var(--text);
+
+  font-size: 38px;
+}
+
+/* =========================================================
+   BUSCA
+========================================================= */
+
+.search-box {
+  width: 260px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 13px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
+
+  background: var(--surface);
+
+  color: var(--muted);
+}
+
+.search-box:focus-within {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 3px rgba(139, 124, 246, 0.08);
+}
+
+.search-box input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: var(--text);
+}
+
+.search-box input::placeholder {
+  color: #77748a;
+}
+
+/* =========================================================
+   ESTATÍSTICAS
+========================================================= */
+
+.stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+
+  margin-top: 35px;
+}
+
+.stat-card {
+  padding: 22px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 11px;
+
+  background: var(--surface);
+
+  transition: 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #464361;
+}
+
+.stat-card span {
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+.stat-card strong {
+  display: block;
+
+  margin-top: 7px;
+
+  color: var(--primary-light);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 30px;
+}
+
+/* =========================================================
+   ESTRELAS DA HOME
+========================================================= */
+
+.home-rating {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 10px;
+
+  min-height: 24px;
+}
+
+.home-stars {
+  display: flex;
+
+  align-items: center;
+
+  gap: 2px;
+
+  height: 24px;
+}
+
+.home-stars span {
+  display: inline-block !important;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 21px !important;
+
+  line-height: 1 !important;
+
+  color: #77738a;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+.home-stars span.filled {
+  color: #f4bd3f;
+}
+
+.rating-number {
+  display: inline-block !important;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  visibility: visible !important;
+}
+
+/* =========================================================
+   BIBLIOTECA VAZIA DA HOME
+========================================================= */
+
+.empty-library {
+  min-height: 300px;
+
+  margin-top: 25px;
+
+  border: 1px dashed #3b3954;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  background: rgba(28, 28, 50, 0.45);
+}
+
+.empty-icon {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(139, 124, 246, 0.1);
+
+  color: var(--primary);
+}
+
+.empty-library h3 {
+  margin-top: 17px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 23px;
+
+  color: var(--text);
+}
+
+.empty-library p {
+  margin: 7px 0 20px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   RESPONSIVO HOME
+========================================================= */
+
+@media (max-width: 850px) {
+  .hero {
+    padding: 60px 7%;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .hero-decoration {
+    align-self: center;
+
+    transform: scale(0.85);
+
+    margin-top: -30px;
+  }
+
+  .library-section {
+    padding: 60px 7%;
+  }
+
+  .section-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    min-height: 520px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-decoration {
+    width: 330px;
+
+    transform: scale(0.7);
+
+    transform-origin: left top;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}

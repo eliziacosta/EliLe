@@ -12,7 +12,7 @@ import {
   X,
   Upload,
 } from "lucide-react";
-
+import "./style.css";
 import { useLivros } from "../../context/LivrosContext";
 
 function AdicionarLivro() {

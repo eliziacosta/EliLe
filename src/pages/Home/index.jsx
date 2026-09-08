@@ -8,7 +8,7 @@ import {
   Star,
   ArrowRight,
 } from "lucide-react";
-
+import "./style.css";
 import RatingStars from "../../components/RatingStars";
 import elile from "../../assets/elile.png";
 import { useLivros } from "../../context/LivrosContext";

@@ -10,7 +10,7 @@ import {
   BookCheck,
 } from "lucide-react";
 import { useState } from "react";
-
+import "./style.css";
 import { useLivros } from "../../context/LivrosContext";
 import elile from "../../assets/elile.png";
 
