@@ -56,7 +56,7 @@ function Biblioteca() {
   return (
     <div className="biblioteca-page">
 
-      {/* NAVBAR */}
+    
 
       <header className="navbar">
 
@@ -98,7 +98,6 @@ function Biblioteca() {
 
       <main className="biblioteca-container">
 
-        {/* CABEÇALHO */}
 
         <div className="biblioteca-heading">
 
@@ -129,7 +128,6 @@ function Biblioteca() {
 
         </div>
 
-        {/* ESTATÍSTICAS */}
 
         <div className="library-stats">
 
@@ -214,7 +212,6 @@ function Biblioteca() {
 
         </div>
 
-        {/* FILTROS */}
 
         <div className="library-toolbar">
 
@@ -289,7 +286,6 @@ function Biblioteca() {
 
         </div>
 
-        {/* LIVROS */}
 
         {livros.length === 0 ? (
 

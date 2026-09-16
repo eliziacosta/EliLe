@@ -182,9 +182,6 @@
     border-right-color: var(--border);
   }
 }
-/* ========================================
-   PÁGINA ADICIONAR LIVRO
-======================================== */
 
 .add-page {
   min-height: calc(100vh - 78px);
@@ -197,13 +194,12 @@
   margin: 0 auto;
 }
 
-/* VOLTAR */
+
 
 .add-page .back-link {
   margin-bottom: 35px;
 }
 
-/* CABEÇALHO */
 
 .add-header {
   margin-bottom: 35px;
@@ -225,7 +221,7 @@
   line-height: 1.7;
 }
 
-/* FORMULÁRIO */
+
 
 .book-form {
   padding: 35px;
@@ -235,7 +231,6 @@
   box-shadow: 0 15px 45px rgba(50, 40, 30, 0.06);
 }
 
-/* CAPA */
 
 .form-cover-section {
   display: grid;
@@ -297,7 +292,6 @@
   font-size: 11px;
 }
 
-/* INPUT URL */
 
 .input-wrapper {
   height: 48px;
@@ -337,7 +331,6 @@
   color: #aaa49c;
 }
 
-/* GRID */
 
 .form-grid {
   display: grid;
@@ -349,13 +342,13 @@
   grid-column: 1 / -1;
 }
 
-/* SELECT */
+
 
 .select-wrapper select {
   cursor: pointer;
 }
 
-/* TEXTAREA */
+
 
 .textarea-wrapper {
   min-height: 150px;
@@ -392,7 +385,7 @@
   line-height: 1.6;
 }
 
-/* AÇÕES */
+
 
 .form-actions {
   display: flex;
@@ -423,14 +416,10 @@
   background: #f3eee7;
 }
 
-/* BOTÃO PRINCIPAL */
-
 .form-actions .primary-button {
   min-height: 47px;
   border-radius: 9px;
 }
-
-/* RESPONSIVO */
 
 @media (max-width: 700px) {
 

@@ -114,14 +114,14 @@ function AdicionarLivro() {
 
       <div className="add-container">
 
-        {/* VOLTAR */}
+       
 
         <Link to="/" className="back-link">
           <ArrowLeft size={18} />
           <span>Voltar para início</span>
         </Link>
 
-        {/* CABEÇALHO */}
+       
 
         <header className="add-header">
 
@@ -140,14 +140,14 @@ function AdicionarLivro() {
 
         </header>
 
-        {/* FORMULÁRIO */}
+       
 
         <form
           className="book-form"
           onSubmit={handleSubmit}
         >
 
-          {/* CAPA */}
+          
 
           <section className="form-cover-section">
 
@@ -235,7 +235,7 @@ function AdicionarLivro() {
 
           </section>
 
-          {/* INFORMAÇÕES */}
+         
 
           <div className="form-section-title">
 
@@ -258,7 +258,7 @@ function AdicionarLivro() {
 
           <div className="form-grid">
 
-            {/* TÍTULO */}
+            
 
             <div className="form-group full">
 
@@ -285,7 +285,7 @@ function AdicionarLivro() {
 
             </div>
 
-            {/* AUTOR */}
+            
 
             <div className="form-group">
 
@@ -312,7 +312,7 @@ function AdicionarLivro() {
 
             </div>
 
-            {/* GÊNERO */}
+           
 
             <div className="form-group">
 
@@ -337,7 +337,6 @@ function AdicionarLivro() {
 
             </div>
 
-            {/* PÁGINAS */}
 
             <div className="form-group">
 
@@ -363,7 +362,6 @@ function AdicionarLivro() {
 
             </div>
 
-            {/* STATUS */}
 
             <div className="form-group">
 
@@ -398,7 +396,6 @@ function AdicionarLivro() {
 
             </div>
 
-            {/* DESCRIÇÃO */}
 
             <div className="form-group full">
 
@@ -435,7 +432,6 @@ function AdicionarLivro() {
 
           </div>
 
-          {/* RODAPÉ */}
 
           <div className="form-actions">
 

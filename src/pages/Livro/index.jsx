@@ -41,10 +41,6 @@ function Livro() {
     }
   }, [livro]);
 
-  // =========================
-  // LIVRO NÃO ENCONTRADO
-  // =========================
-
   if (!livro) {
     return (
       <main className="not-found">
@@ -66,9 +62,6 @@ function Livro() {
     );
   }
 
-  // =========================
-  // MARCAR COMO LIDO
-  // =========================
 
   function marcarComoLido() {
     atualizarLivro(livro.id, {
@@ -76,9 +69,6 @@ function Livro() {
     });
   }
 
-  // =========================
-  // AVALIAÇÃO
-  // =========================
 
   function alterarAvaliacao(novaNota) {
     setAvaliacao(novaNota);
@@ -88,9 +78,6 @@ function Livro() {
     });
   }
 
-  // =========================
-  // EXCLUIR
-  // =========================
 
   function excluirLivro() {
     const confirmar = window.confirm(
@@ -104,9 +91,6 @@ function Livro() {
     navigate("/biblioteca");
   }
 
-  // =========================
-  // STATUS
-  // =========================
 
   function mostrarStatus() {
     if (livro.status === "quero-ler") {
@@ -120,9 +104,6 @@ function Livro() {
     return "LIVRO LIDO";
   }
 
-  // =========================
-  // DATA
-  // =========================
 
   function formatarData() {
     if (!livro.criadoEm) {
@@ -138,9 +119,6 @@ function Livro() {
     return data.toLocaleDateString("pt-BR");
   }
 
-  // =========================
-  // ESTRELAS
-  // =========================
 
   function renderizarEstrelas() {
     const estrelas = [];
@@ -192,9 +170,6 @@ function Livro() {
     return estrelas;
   }
 
-  // =========================
-  // EXPORTAR PNG
-  // =========================
 
   async function exportarPNG() {
     const elemento =
@@ -241,10 +216,6 @@ function Livro() {
   return (
     <main className="book-page">
 
-      {/* =========================
-          CABEÇALHO
-      ========================= */}
-
       <div className="book-page-header">
 
         <Link
@@ -266,9 +237,6 @@ function Livro() {
 
       </div>
 
-      {/* =========================
-          FOLHA
-      ========================= */}
 
       <section
         id="livro-exportar"
@@ -278,10 +246,6 @@ function Livro() {
         <div className="paper-margin" />
 
         <div className="paper-content">
-
-          {/* =========================
-              LOGO
-          ========================= */}
 
           <div className="paper-brand">
 
@@ -302,9 +266,6 @@ function Livro() {
 
           </div>
 
-          {/* =========================
-              CAPA + INFORMAÇÕES
-          ========================= */}
 
           <div className="notebook-book-layout">
 
@@ -330,7 +291,6 @@ function Livro() {
 
             </div>
 
-            {/* INFORMAÇÕES */}
 
             <div className="notebook-info">
 
@@ -370,7 +330,6 @@ function Livro() {
 
               </div>
 
-              {/* INFORMAÇÕES */}
 
               <div className="book-information">
 
@@ -426,9 +385,6 @@ function Livro() {
 
           </div>
 
-          {/* =========================
-              SOBRE O LIVRO
-          ========================= */}
 
           <div className="notebook-section">
 
@@ -451,9 +407,6 @@ function Livro() {
 
           </div>
 
-          {/* =========================
-              RODAPÉ
-          ========================= */}
 
           <div className="paper-footer">
 
@@ -471,9 +424,6 @@ function Livro() {
 
       </section>
 
-      {/* =========================
-          AÇÕES
-      ========================= */}
 
       <div className="details-actions">
 

@@ -34,9 +34,6 @@ function Home() {
   return (
     <main className="home-page">
 
-      {/* =====================================================
-          NAVBAR
-      ===================================================== */}
 
       <header className="navbar">
 
@@ -70,9 +67,6 @@ function Home() {
       </header>
 
 
-      {/* =====================================================
-          HERO
-      ===================================================== */}
 
       <section className="hero">
 
@@ -115,9 +109,6 @@ function Home() {
         </div>
 
 
-        {/* =====================================================
-            DECORAÇÃO
-        ===================================================== */}
 
         <div className="hero-decoration">
 
@@ -153,15 +144,10 @@ function Home() {
       </section>
 
 
-      {/* =====================================================
-          BIBLIOTECA
-      ===================================================== */}
 
       <section className="library-section">
 
-        {/* ===================================================
-            CABEÇALHO
-        =================================================== */}
+  
 
         <div className="section-header">
 
@@ -188,9 +174,6 @@ function Home() {
         </div>
 
 
-        {/* ===================================================
-            ESTATÍSTICAS
-        =================================================== */}
 
         <div className="stats">
 
@@ -213,8 +196,6 @@ function Home() {
           </div>
 
 
-          {/* QUERO LER */}
-
           <div className="stat-card">
 
             <div className="stat-icon">
@@ -231,8 +212,6 @@ function Home() {
 
           </div>
 
-
-          {/* LENDO */}
 
           <div className="stat-card">
 
@@ -251,8 +230,6 @@ function Home() {
           </div>
 
 
-          {/* LIDOS */}
-
           <div className="stat-card">
 
             <div className="stat-icon">
@@ -270,11 +247,6 @@ function Home() {
           </div>
 
         </div>
-
-
-        {/* ===================================================
-            LIVROS RECENTES
-        =================================================== */}
 
         {livrosRecentes.length > 0 ? (
 
@@ -297,10 +269,6 @@ function Home() {
             </div>
 
 
-            {/* =================================================
-                GRID DOS LIVROS
-            ================================================= */}
-
             <div className="books-grid home-books">
 
               {livrosRecentes.map((livro) => {
@@ -318,9 +286,6 @@ function Home() {
 
                     <article className="book-card">
 
-                      {/* =======================================
-                          CAPA
-                      ======================================= */}
 
                       <div className="book-cover">
 
@@ -348,10 +313,6 @@ function Home() {
                       </div>
 
 
-                      {/* =======================================
-                          INFORMAÇÕES
-                      ======================================= */}
-
                       <div className="book-card-content">
 
                         <h3>
@@ -363,9 +324,6 @@ function Home() {
                         </p>
 
 
-                        {/* =====================================
-                            AVALIAÇÃO
-                        ===================================== */}
 
                         <div className="home-rating">
 
@@ -432,10 +390,6 @@ function Home() {
                         </div>
 
 
-                        {/* =====================================
-                            GÊNERO
-                        ===================================== */}
-
                         {livro.genero && (
 
                           <span className="book-genre">
@@ -460,10 +414,7 @@ function Home() {
 
         ) : (
 
-          /* ===================================================
-             BIBLIOTECA VAZIA
-          =================================================== */
-
+        
           <div className="empty-library">
 
             <div className="empty-icon">
